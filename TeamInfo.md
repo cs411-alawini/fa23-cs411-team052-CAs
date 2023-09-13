@@ -12,17 +12,18 @@
 | Member1     | areebar2@illinois.edu  |
 | Member2     |    Trisha Choudhary    |
 | Member2     |  trishac2@illinois.edu |
-| Member3     |                        |
-| Member3     |                        |
+| Member3     |  Chai Bhardwaj         |
+| Member3     |   cb2@illinois.edu     |
 
 ## Project Information
 
 |   Info      |        Description     |
 | ----------- | ---------------------- |
-|  Title      |       ProjectTitle     |
+|  Title      | C2C(College to Career) |
 | System URL  |      link_to_system    |
 | Video Link  |      link_to_video     |
 
 ## Project Summary
 
-This is a summary of the project!
+The “College to Career C2C” project is a specialized web application designed to support students navigating the Indian education system on their journey from secondary school to their professional careers. Leveraging the “Campus Recruitment” dataset from Kaggle, curated by Dr. Dhimant Ganatara and Ben Roshan, this platform provides invaluable insights into job statistics, industry placements, and salary distributions. 
+

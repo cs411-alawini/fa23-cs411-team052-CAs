@@ -3,6 +3,8 @@ from flask import Flask, request, stream_with_context
 import flask
 import json
 from flask_cors import CORS
+from src.db_utils import *
+import numpy as np
 
 app = Flask(__name__, static_url_path='')
 CORS(app)
@@ -20,13 +22,8 @@ def get_placement():
 
 @app.route('/test/db', methods = ['POST'])
 def test_db_connection():
-    json_data = request.get_json()
-    try:
-        GPA = json_data['gpa']
-    except Exception as e:
-        return flask.Response("KeyError: {0} does not exist. Make sure you have all required fields.".format(e), status = 500)
-    
-    return {"GPA": GPA, "status": "this will test the database connection"}, 200
+    CURRENT_DATE = execute_query("SELECT CURDATE()")[0][0]
+    return  {"status": "success", "current date": CURRENT_DATE}, 200
 
 @app.route('/test/server', methods = ['GET'])
 def test_server():

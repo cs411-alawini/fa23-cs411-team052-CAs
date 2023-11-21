@@ -42,10 +42,9 @@ def execute_query(query):
     cursor = cnx.cursor()
     cursor.execute(query)
     df = pd.DataFrame(cursor.fetchall())
-    print(df)
 
     # close the cursor and cnx
     cursor.close()
     cnx.close()
 
-execute_query("SELECT * FROM Grad_Student")
+    return df

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html Lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content = "width=device-width, initial-scale = 1.0">
+  <link rel = "stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+  
+    <head>
+        <title>C2C Landing Page</title>
+    </head>
+    <body>
+      <div class = "wrapper">
+        <header>
+          <div class="logo">
+            <img src="" alt = "place C2C graphic here">
+          </div>
+
+          <div class="nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+          </div>
+        </header>
+
+        <div class="banner">
+          <div class = "text">
+            <div class="text-inner">
+              <h1>C2C</h1>
+              <p>College 2 Careers</p>
+              <a href="#">More Info</a>
+            </div>
+          </div>
+          <div class="img">
+            <div class="img-inner">
+              <img src="" alt="place image here"/>
+  
+              <div class="info-button">
+                <button><i class = "fa fa-plus"></i></button>
+                <div class="info-text">
+                  <h3>Interactive Data Visualizations</h3>
+                  <p>Place some info here</p>
+                </div>
+              </div>
+  
+              <div class="info-button b2">
+                <button><i class = "fa fa-plus"></i></button>
+                <div class="info-text">
+                  <h3>Career Prospects</h3>
+                  <p>Place some info here</p>
+                </div>
+              </div>
+  
+              <div class="info-button b3">
+                <button><i class = "fa fa-plus"></i></button>
+                <div class="info-text">
+                  <h3>Current Trends</h3>
+                  <p>Place some info here</p>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+    <script>
+      $(function(){
+        
+        $(".info-button").on('click', function(e) {
+          e.stopPropagation();
+          $(this).find(".info-text").addClass("show");
+          $(".info-button").not(this).find(".info-text").removeClass("show");
+
+
+        });
+        $(document).on('click', function(e) {
+            $(".info-text").removeClass("show");
+        });
+        $(".info-text").on('click', function(){
+          e.stopPropagation();
+        });
+
+      });
+    </script>
+    </body>
+</html>

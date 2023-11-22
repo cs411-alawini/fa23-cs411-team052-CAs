@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-import $ from 'jquery';
 import Nav from './Navigation';
 
 function Dashboard() {
@@ -31,12 +30,6 @@ function Dashboard() {
                 <div id="donutChart"><img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/barchart_ver_2.jpg"/></div>
                 <div id ="scientificChart"> <img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/barchart_ver_2.jpg"/></div>
                 <div id="pieChart"><img src="https://images.twinkl.co.uk/tw1n/image/private/t_630/u/ux/barchart_ver_2.jpg"/></div>
-                <form>
-                    <label for="fname">First name:</label><br/>
-                    <input type="text" id="fname" name="fname"/><br/>
-                    <label for="lname">Last name:</label><br/>
-                    <input type="text" id="lname" name="lname"/>
-                </form>
             </main>
         </div>
         </body>

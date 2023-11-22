@@ -11,6 +11,8 @@ function Nav() {
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/dash">Dashboard</a></li>
+              <li><a href="/place">Placement</a></li>
+              <li><a href="/search">Search</a></li>
             </ul>
           </div>
         </header>

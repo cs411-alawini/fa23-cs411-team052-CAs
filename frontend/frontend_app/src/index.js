@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Dashboard from './components/Dashboard';
+import Placement from './components/Placement';
+import Search from './components/Search';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
     path: "dash",
     element: <Dashboard/>,
   },
+  {
+    path: "place",
+    element: <Placement/>
+  },
+  {
+    path: "search",
+    element: <Search/>
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

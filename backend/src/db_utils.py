@@ -3,8 +3,8 @@ from google.cloud import secretmanager
 import os
 import pandas as pd
 
-# set the path to service account key JSON file
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../fa23-cs411-team052-cas-c5f200821605.json"
+# get the path to service account key JSON file (should be set using local env var)
+os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
 
 def get_db_connection():
     project_id = "fa23-cs411-team052-cas"
@@ -42,6 +42,8 @@ def execute_query(query):
     cursor = cnx.cursor()
     cursor.execute(query)
     df = pd.DataFrame(cursor.fetchall())
+
+    cnx.commit()
 
     # close the cursor and cnx
     cursor.close()

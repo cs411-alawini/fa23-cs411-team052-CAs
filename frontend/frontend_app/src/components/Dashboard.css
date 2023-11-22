@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #374e58;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .wrapper {
+    color:  #fff;
+  }
+  .sidebar {
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 20%;
+    padding: 5em 2em 0 2em;
+    background: linear-gradient(#374e58, #233239, #1c292e);
+    max-width: 18em;
+  }
+  .sidebar .container {
+    position: relative;
+    top: 5%;
+    height: 100%;
+  }
+  .sidebar .container .title{
+    font-weight: 400;
+  }
+  .sidebar ul{
+    margin: 1em 0 3em 0;
+  }
+  .sidebar li{
+    display: block;
+    padding: 1em 0;
+    border-bottom: 1px #21284c solid;
+  }
+  .sidebar ul a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+ 
+ .dashboard {
+   background: #374e58;
+   padding: 2em;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   justify-content: center;
+   grid-gap: 2em;
+   position: absolute;
+   top: 5em;
+   right:0;
+   left: 18em;
+   width: calc(100%-18em);
+   overflow-x:hidden;
+ }
+  #scientificChart img {
+    height: 200px;
+    width: 350px;
+    padding: 2em;
+    box-shadow: 0 15px 150px #11181b;
+ }
+ #pieChart img{
+    height: 200px;
+    width: 350px;
+    padding: 2em;
+    box-shadow: 0 15px 150px #11181b;
+ }
+ #carpetChart img{
+    height: 200px;
+    width: 350px;
+    padding: 2em;
+    box-shadow: 0 15px 150px #11181b;
+ }
+ #donutChart img{
+    height: 200px;
+    width: 350px;
+    padding: 2em;
+    box-shadow: 0 15px 150px #11181b;
+
+ }
+ 

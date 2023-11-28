@@ -70,24 +70,4 @@
     width: 650px;
     padding: 2em;
     box-shadow: 0 15px 150px #11181b;
- }
- #pieChart img{
-    height: 200px;
-    width: 350px;
-    padding: 2em;
-    box-shadow: 0 15px 150px #11181b;
- }
- #carpetChart img{
-    height: 200px;
-    width: 350px;
-    padding: 2em;
-    box-shadow: 0 15px 150px #11181b;
- }
- #donutChart img{
-    height: 200px;
-    width: 350px;
-    padding: 2em;
-    box-shadow: 0 15px 150px #11181b;
-
- }
- 
+  }

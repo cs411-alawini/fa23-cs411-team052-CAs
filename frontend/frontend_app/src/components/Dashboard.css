@@ -65,9 +65,9 @@
    width: calc(100%-18em);
    overflow-x:hidden;
  }
-  #scientificChart img {
-    height: 200px;
-    width: 350px;
+  .tableauPlaceholder {
+    height: 500px;
+    width: 650px;
     padding: 2em;
     box-shadow: 0 15px 150px #11181b;
  }

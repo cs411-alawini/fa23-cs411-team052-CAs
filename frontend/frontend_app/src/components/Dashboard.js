@@ -50,16 +50,6 @@ function Dashboard() {
         <div className="outer">
           <div className="wrapper">
             <Nav />
-            <nav className="sidebar">
-              <div className="container">
-                <h3 className="title">Menu</h3>
-                <ul>
-                  <li><a href="#">Trends</a></li>
-                  <li><a href="#">Trends</a></li>
-                  <li><a href="#">Trends</a></li>
-                </ul>
-              </div>
-            </nav>
             <main className="dashboard">
               {/* First Data Visualization */}
               <div

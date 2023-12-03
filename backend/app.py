@@ -6,6 +6,7 @@ from flask_cors import CORS
 from src.db_utils import *
 from src.keyword_search import *
 import numpy as np
+from src.placement import *
 
 app = Flask(__name__, static_url_path='')
 CORS(app)
@@ -16,23 +17,35 @@ port = int(os.getenv('PORT', 8000))
 def get_placement():
     json_data = request.get_json()
     try:
-        USER_ID = json_data['user_id']
-        PASSWORD = json_data['password']
-        EMAIL = json_data['email']
-        NAME = json_data['name']
+        # USER_ID = json_data['user_id']
+        # PASSWORD = json_data['password']
+        # EMAIL = json_data['email']
+        # NAME = json_data['name']
         HSC_PERCENT = json_data['hsc_percent']
-        HSC_SUBJECT = json_data['hsc_subject']
+        # HSC_SUBJECT = json_data['hsc_subject']
         SSC_PERCENT = json_data['ssc_percent']
-        WORK_EXP = json_data['work_exp']
-        UNDERGRAD_DEGREE = json_data['undergrad_degree']
-        GENDER = json_data['gender']
+        # WORK_EXP = json_data['work_exp']
+        # UNDERGRAD_DEGREE = json_data['undergrad_degree']
+        # GENDER = json_data['gender']
         DEGREE_PERCENT = json_data['degree_percent']
         GRAD_PERCENT = json_data['grad_percent']
         GRAD_DEGREE = json_data['grad_degree']
     except Exception as e:
         return flask.Response("KeyError: {0} does not exist. Make sure you have all required fields.".format(e), status = 500)
     
-    return {"user_id": USER_ID, "status": "this will retreive the form info and return the calculated placement of the user + put it in the db"}, 200
+    # TODO: INSERT USER BEFORE
+
+    if (len(GRAD_DEGREE) != 0):
+        # pass in grad percent
+        tuple = classifyAPointAndUpdateDB(HSC_PERCENT, SSC_PERCENT, DEGREE_PERCENT, GRAD_PERCENT)
+    else:
+        # pass in grad percent as 0
+        tuple = classifyAPointAndUpdateDB(HSC_PERCENT, SSC_PERCENT, DEGREE_PERCENT, 0)
+
+    # TODO: INSERT CALCULATED PLACEMENT INFO AFTER
+
+    json_data = json.dumps(tuple)
+    return json_data, 200
 
 # keyword search endpoint
 @app.route('/search', methods = ['POST'])
@@ -48,6 +61,16 @@ def get_keyword_search():
     rows = df.to_dict(orient='records')
         
     return jsonify({'rows': rows}), 200
+
+@app.route('/delete', methods = ['POST'])
+def delete_user_profile():
+    json_data = request.get_json()
+    try:
+        KEYWORD = json_data['keyword']
+        TABLE = json_data['table']
+    except Exception as e:
+        return flask.Response("KeyError: {0} does not exist. Make sure you have all required fields.".format(e), status = 500)
+    
 
 ####################################################################################
 @app.route('/test/db', methods = ['POST'])

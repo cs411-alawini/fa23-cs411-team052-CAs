@@ -1,4 +1,4 @@
-from db_utils import *
+from src.db_utils import *
 
 # TODO: create more functions after calculating placement to insert that user data into according tables
 

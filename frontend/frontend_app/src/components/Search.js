@@ -1,3 +1,4 @@
+import './Search.css';
 import React, { useState } from 'react';
 import Nav from './Navigation';
 
@@ -71,7 +72,7 @@ function Search() {
         </form>
       </div>
 
-      <div className="search-results-container" style={{ marginTop: '10em', marginLeft: '14em'}}>
+      <div className="search-results-container" style={{ marginTop: '278px', marginLeft: '320px'}}>
         <h3>Search Results:</h3>
         <ul>
           {searchResults.map((row, index) => (

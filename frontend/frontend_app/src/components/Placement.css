@@ -13,13 +13,11 @@
   .form {
     padding: 2em;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     justify-content: center;
-    grid-gap: 2em;
     position: absolute;
-    top: 5em;
-    right:0;
+    top: 10em;
+    right: 0;
     left: 18em;
-    width: calc(100%-18em);
-    overflow-x:hidden;
-  }
+    width: calc(100% - 18em);
+    overflow-x: hidden;
+}

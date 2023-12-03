@@ -1,12 +1,10 @@
-import './Search.css';
+import React, { useState } from 'react';
 import Nav from './Navigation';
-
-import React, { useState } from "react";
 
 function Search() {
   const [formData, setFormData] = useState({
     keyword: '', // Rename 'query' to 'keyword'
-    table: '', // Add any default or required fields
+    table: ''
   });
 
   const [searchResults, setSearchResults] = useState([]);
@@ -73,7 +71,7 @@ function Search() {
         </form>
       </div>
 
-      <div className="search-results-container" style={{ marginTop: '278px', marginLeft: '320px'}}>
+      <div className="search-results-container" style={{ marginTop: '10em', marginLeft: '14em'}}>
         <h3>Search Results:</h3>
         <ul>
           {searchResults.map((row, index) => (

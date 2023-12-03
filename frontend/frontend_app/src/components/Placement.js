@@ -30,10 +30,18 @@ function Placement() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     try {
-      //Replace URL with flask server address
-      const response = await axios.post('http://localhost:8000/placement', formData);
+      // Convert form data to JSON
+      const jsonData = JSON.stringify(formData);
+      
+      // Replace the URL with your actual backend server address
+      const response = await axios.post('http://localhost:8000/placement', jsonData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
       console.log(response.data);
     } catch (error) {
       console.error('Error submitting form:', error);

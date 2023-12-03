@@ -1,4 +1,4 @@
-from db_utils import *
+from src.db_utils import *
 
 def keyword_search(keyword, table):
     keyword = keyword.lower()

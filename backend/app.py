@@ -44,12 +44,10 @@ def get_keyword_search():
     except Exception as e:
         return flask.Response("KeyError: {0} does not exist. Make sure you have all required fields.".format(e), status = 500)
     
-    data_dict = dict()
     df = keyword_search(KEYWORD, TABLE)
-    for col in df.columns:
-        data_dict[col] = df[col].values.totlist()
+    rows = df.to_dict(orient='records')
         
-    return jsonify(data_dict), 200
+    return jsonify({'rows': rows}), 200
 
 ####################################################################################
 @app.route('/test/db', methods = ['POST'])

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Dashboard from './components/Dashboard';
 import Placement from './components/Placement';
 import Search from './components/Search';
+import Info from './components/Info';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "search",
     element: <Search/>
+  },
+  {
+    path: "info",
+    element: <Info/>
   }
 ]);
 

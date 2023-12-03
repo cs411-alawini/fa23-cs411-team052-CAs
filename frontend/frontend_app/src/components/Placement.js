@@ -5,6 +5,7 @@ import './Placement.css';
 
 function Placement() {
   const [formData, setFormData] = useState({
+    student_id: '',
     user_id: '',
     password: '',
     email: '',
@@ -27,6 +28,51 @@ function Placement() {
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleDelete = async () => {
+    // Prompt the user to enter their student_id
+    const studentIdToDelete = prompt('Enter your student_id to confirm deletion:');
+    
+    if (!studentIdToDelete) {
+      // User cancelled or entered an empty value
+      return;
+    }
+  
+    try {
+      // Replace 'DELETE_ENDPOINT' with the actual endpoint for deleting entries
+      const response = await axios.delete('http://localhost:8000/delete', {
+        data: {
+          student_id: studentIdToDelete,
+        },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      console.log(response.data);
+  
+      // After successful deletion, reset the form data or perform any other necessary actions
+      setFormData({
+        student_id: '',
+        user_id: '',
+        password: '',
+        email: '',
+        name: '',
+        hsc_percent: '',
+        hsc_subject: '',
+        ssc_percent: '',
+        work_exp: '',
+        undergrad_degree: '',
+        gender: '',
+        degree_percent: '',
+        grad_percent: '',
+        grad_degree: '',
+      });
+    } catch (error) {
+      console.error('Error deleting entry:', error);
+    }
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,6 +101,8 @@ function Placement() {
       <div className="form">
         <form onSubmit={handleSubmit}>
           {/* Add form fields with appropriate name attributes */}
+          ` <label htmlFor="student_id">STUDENT_ID:</label><br/>
+            <input type="text" id="student_id" name="user_id" value={formData.user_id} onChange={handleInputChange} /><br/><br/>
             <label htmlFor="user_id">USER_ID:</label><br/>
             <input type="text" id="user_id" name="user_id" value={formData.user_id} onChange={handleInputChange} /><br/><br/>
             <label for="lname">PASSWORD:</label><br/>
@@ -81,7 +129,8 @@ function Placement() {
             <input type="text" id="lname" name="grad_percent" value={formData.grad_percent} onChange={handleInputChange}/><br/><br/>
             <label for="lname">GRAD_DEGREE:</label><br/>
             <input type="text" id="lname" name="grad_degree" value={formData.grad_degree} onChange={handleInputChange}/><br/><br/>
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleSubmit}>Submit</button><br/>
+          <button type="button" onClick={handleDelete}>Delete</button>
         </form>
       </div>
     </div>

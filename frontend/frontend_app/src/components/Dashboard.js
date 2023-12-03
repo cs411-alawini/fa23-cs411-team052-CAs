@@ -148,6 +148,9 @@ function Dashboard() {
                     <param name='language' value='en-US' />
                     <param name='filter' value='publish=yes' />
                 </object>
+                <div className = "Distribution_Table" style={{ display: 'none' }}>
+                  <img src="" alt = "table"/>
+                </div>
               </div>
             </main>
           </div>

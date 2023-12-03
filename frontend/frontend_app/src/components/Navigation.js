@@ -1,11 +1,12 @@
 import './Navigation.css';
+import c2cLogo from './logo.png';
 
 function Nav() {
   return (
        <div class = "wrapper">
         <header>
           <div class="logo">
-            <img src="" alt = "place C2C graphic here"/>
+            <img src={c2cLogo} alt = "place C2C graphic here" width="200px" height="200px"/>
           </div>
           <div class="nav">
             <ul>

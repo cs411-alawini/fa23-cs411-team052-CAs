@@ -69,5 +69,11 @@
     height: 500px;
     width: 650px;
     padding: 2em;
-    box-shadow: 0 15px 150px #11181b;
+    box-shadow: 0 15px 150px #1d282d;
+  }
+  .Distribution_Table {
+    height: 500px;
+    width: 650px;
+    padding: 2em;
+    box-shadow: 0 15px 150px #1d282d;
   }

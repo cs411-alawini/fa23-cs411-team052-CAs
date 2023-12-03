@@ -42,9 +42,9 @@ function Landing() {
       <div className="banner">
         <div className="text">
           <div className="text-inner">
-            <h1>C2C</h1>
-            <p>College 2 Careers</p>
-            <a href="#">More Info</a>
+            <h1>College To Career</h1>
+            <p>by: Trisha, Ana, Areeba, Chai</p>
+            <a href="/info">More Info</a>
           </div>
         </div>
         <div className="img">
@@ -56,8 +56,7 @@ function Landing() {
                 <i className="fa fa-plus"></i>
               </button>
               <div className="info-text">
-                <h3>Interactive Data Visualizations</h3>
-                <p>Place some info here</p>
+                <p>This webapp is designed to display customized data visualizations regarding career information for college students including salary distribution, gender distribution and previous work experience.</p>
               </div>
             </div>
 
@@ -66,8 +65,8 @@ function Landing() {
                 <i className="fa fa-plus"></i>
               </button>
               <div className="info-text">
-                <h3>Career Prospects</h3>
-                <p>Place some info here</p>
+                <p>Our placement data visualization displays current data on the probability of getting placed into a specialization based on previous work experiecen. <br/>
+                The table below it uses an AI generated predictive algorithm to predict the probability of a user being placed based on their inputted information.</p>
               </div>
             </div>
 
@@ -76,8 +75,7 @@ function Landing() {
                 <i className="fa fa-plus"></i>
               </button>
               <div className="info-text">
-                <h3>Current Trends</h3>
-                <p>Place some info here</p>
+                <p>In addition to placement user data users can see a dashboard that displays current trends regarding salary distribution and gender distribution.</p>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ function Placement() {
     grad_degree: ''
 
   });
-
+  const [placementResult, setPlacementResult] = useState(null);
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
@@ -37,7 +37,7 @@ function Placement() {
       // User cancelled or entered an empty value
       return;
     }
-  
+    
     try {
       // Replace 'DELETE_ENDPOINT' with the actual endpoint for deleting entries
       const response = await axios.delete('http://localhost:8000/delete', {
@@ -87,7 +87,7 @@ function Placement() {
           'Content-Type': 'application/json',
         },
       });
-  
+      setPlacementResult(response.data);
       console.log(response.data);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -132,6 +132,13 @@ function Placement() {
           <button type="submit" onClick={handleSubmit}>Submit</button><br/>
           <button type="button" onClick={handleDelete}>Delete</button>
         </form>
+        {/*Display Placement Data*/}
+        {placementResult && (
+          <div>
+            <h2>Placement Results:</h2>
+            <pre>{JSON.stringify(placementResult, null, 2)}</pre>
+          </div>
+        )}
       </div>
     </div>
   );

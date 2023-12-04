@@ -1,7 +1,5 @@
 from src.db_utils import *
 
-# TODO: create more functions after calculating placement to insert that user data into according tables
-
 # after an undergrad user creates a user profile, we also need to insert into student profile
 def student_profile_trigger(student_id, hsc_percent, hsc_subject, ssc_percent, work_exp, undergrad_degree, gender, degree_percent):
     # student_id = user_id
@@ -46,9 +44,19 @@ def insert_user(user_id, password, email, name, hsc_percent, hsc_subject, ssc_pe
 
     execute_query(query)
     execute_query("DROP TRIGGER UpdateAfterInsert")
-    execute_query("DROP TRIGGER UpdateAfterInsertGrad")
+
+    if len(grad_degree) != 0:
+        execute_query("DROP TRIGGER UpdateAfterInsertGrad")
 
     return
+
+def user_exists(user_id):
+    query = "SELECT UserId FROM User_Info WHERE UserId = " + str(user_id)
+    df = execute_query(query)
+    if (df.empty):
+        return False
+    
+    return True
 
 def delete_user(user_id):
     query1 = "DELETE FROM Grad_Student WHERE StudentId = {0}".format(user_id)
@@ -58,14 +66,34 @@ def delete_user(user_id):
     query5 = "DELETE FROM Final_Output WHERE StudentId = {0}".format(user_id)
     query6 = "DELETE FROM User_Info WHERE UserId = {0}".format(user_id)
 
-    execute_query(query1)
-    execute_query(query2)
     execute_query(query3)
     execute_query(query4)
     execute_query(query5)
     execute_query(query6)
+    execute_query(query1)
+    execute_query(query2)
 
     return
+
+def update_placement_info(student_id, tuple):
+    query = "SELECT StudentID FROM Predicted_User_Data WHERE StudentID = " + str(student_id)
+    df = execute_query(query)
+    if (df.empty):
+        query = "INSERT INTO Predicted_User_Data VALUES (" + str(student_id) + ", '" + str(tuple[0]) + "', " + str(tuple[1]) + ", " + str(tuple[2]) + ")"
+    else:
+        query = "UPDATE Predicted_User_Data SET Status = '" + str(tuple[0]) + "', Salary = " + str(tuple[1]) + ", Emp_Percent = " + str(tuple[2]) + " WHERE StudentId = " + str(student_id)
+        
+    execute_query(query)
+
+def calculate_user_id(email):
+    existing_user_query = "SELECT UserId FROM User_Info WHERE Email = '" + email + "'"
+    existing_user_df = execute_query(existing_user_query)
+    if (existing_user_df.empty):
+        user_id = execute_query("SELECT MAX(StudentId) FROM Student_Profile")[0][0] + 1
+    else:
+        user_id = existing_user_df[0][0]
+    
+    return user_id
 
 # insert_user(1000, "alskdfjlk", "johndoe@gmail.com", "John Doe", 47, "Engineering", 100, "TRUE", "Engineering", "M", 100, 100, "Engineering")
 # print(execute_query("SELECT * FROM User_Info"))

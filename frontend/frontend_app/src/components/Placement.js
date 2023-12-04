@@ -40,10 +40,8 @@ function Placement() {
     
     try {
       // Replace 'DELETE_ENDPOINT' with the actual endpoint for deleting entries
-      const response = await axios.delete('http://localhost:8000/delete', {
-        data: {
-          student_id: studentIdToDelete,
-        },
+      const response = await axios.post('http://localhost:8000/delete', {
+        user_id: studentIdToDelete,
         headers: {
           'Content-Type': 'application/json',
         },

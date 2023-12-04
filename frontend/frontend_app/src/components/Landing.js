@@ -42,7 +42,8 @@ function Landing() {
       <div className="banner">
         <div className="text">
           <div className="text-inner">
-            <h1>College To Career</h1>
+            <h1>College</h1><br/>
+            <h1>To Career</h1>
             <p>by: Trisha, Ana, Areeba, Chai</p>
             <a href="/info">More Info</a>
           </div>

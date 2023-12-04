@@ -101,44 +101,41 @@ function Placement() {
       <div className="form">
         <form onSubmit={handleSubmit}>
           {/* Add form fields with appropriate name attributes */}
-          ` <label htmlFor="student_id">STUDENT_ID:</label><br/>
-            <input type="text" id="student_id" name="user_id" value={formData.user_id} onChange={handleInputChange} /><br/><br/>
-            <label htmlFor="user_id">USER_ID:</label><br/>
             <input type="text" id="user_id" name="user_id" value={formData.user_id} onChange={handleInputChange} /><br/><br/>
-            <label for="lname">PASSWORD:</label><br/>
+            <label htmlfor="lname">PASSWORD:</label><br/>
             <input type="text" id="lname" name="password" value={formData.password} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">EMAIL:</label><br/>
+            <label htmlfor="lname">EMAIL:</label><br/>
             <input type="text" id="lname" name="email" value={formData.email} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">NAME:</label><br/>
+            <label htmlfor="lname">NAME:</label><br/>
             <input type="text" id="lname" name="name" value={formData.name} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">HSC_PERCENT:</label><br/>
+            <label htmlfor="lname">HSC_PERCENT:</label><br/>
             <input type="text" id="lname" name="hsc_percent" value={formData.hsc_percent} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">HSC_SUBJECT:</label><br/>
+            <label htmlfor="lname">HSC_SUBJECT:</label><br/>
             <input type="text" id="lname" name="hsc_subject" value={formData.hsc_subject} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">SSC_PERCENT:</label><br/>
+            <label htmlfor="lname">SSC_PERCENT:</label><br/>
             <input type="text" id="lname" name="ssc_percent" value={formData.ssc_percent} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">WORK_EXP:</label><br/>
+            <label htmlfor="lname">WORK_EXP:</label><br/>
             <input type="text" id="lname" name="work_exp" value={formData.work_exp} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">UNDERGRAD_DEGREE:</label><br/>
+            <label htmlfor="lname">UNDERGRAD_DEGREE:</label><br/>
             <input type="text" id="lname" name="undergrad_degree" value={formData.undergrad_degree} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">GENDER:</label><br/>
+            <label htmlfor="lname">GENDER:</label><br/>
             <input type="text" id="lname" name="gender" value={formData.gender} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">DEGREE_PERCENT:</label><br/>
+            <label htmlfor="lname">DEGREE_PERCENT:</label><br/>
             <input type="text" id="lname" name="degree_percent" value={formData.degree_percent} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">GRAD_PERCENT:</label><br/>
+            <label htmlfor="lname">GRAD_PERCENT:</label><br/>
             <input type="text" id="lname" name="grad_percent" value={formData.grad_percent} onChange={handleInputChange}/><br/><br/>
-            <label for="lname">GRAD_DEGREE:</label><br/>
+            <label htmlfor="lname">GRAD_DEGREE:</label><br/>
             <input type="text" id="lname" name="grad_degree" value={formData.grad_degree} onChange={handleInputChange}/><br/><br/>
-          <button type="submit" onClick={handleSubmit}>Submit</button><br/>
+          <button type="submit" onClick={handleSubmit}>Submit</button><br/><br/>
           <button type="button" onClick={handleDelete}>Delete</button>
         </form>
         {/*Display Placement Data*/}
-        {placementResult && (
-          <div>
-            <h2>Placement Results:</h2>
+        <div className="Results" style={{ marginTop: '100px', marginLeft: '10px'}}>
+          <h2 >Placement Results:</h2>
+          {placementResult && (
             <pre>{JSON.stringify(placementResult, null, 2)}</pre>
-          </div>
         )}
+        </div>
       </div>
     </div>
   );

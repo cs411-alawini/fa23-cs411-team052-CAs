@@ -101,7 +101,6 @@ function Placement() {
       <div className="form">
         <form onSubmit={handleSubmit}>
           {/* Add form fields with appropriate name attributes */}
-            <input type="text" id="user_id" name="user_id" value={formData.user_id} onChange={handleInputChange} /><br/><br/>
             <label htmlfor="lname">PASSWORD:</label><br/>
             <input type="text" id="lname" name="password" value={formData.password} onChange={handleInputChange}/><br/><br/>
             <label htmlfor="lname">EMAIL:</label><br/>

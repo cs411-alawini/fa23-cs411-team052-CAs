@@ -2,7 +2,7 @@ import math
 import pandas as pd
 from src.db_utils import execute_query
 
-def classifyAPointAndUpdateDB(hsc_percent, ssc_percent, degree_percent, grad_percent, k=3):
+def classifyAPointAndUpdateDB(hsc_percent, ssc_percent, degree_percent, grad_percent, k=10):
     # studentid = 1000, status = 'Placed', salary, employability_percent
     query = "SELECT HSC_Percent, SSC_Percent, Degree_Percent, Grad_Percent, Status, Salary, Emp_Percent FROM Student_Profile NATURAL JOIN Grad_Student NATURAL JOIN Predicted_User_Data"
     points = execute_query(query)

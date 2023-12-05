@@ -61,7 +61,6 @@ function Dashboard() {
                     <img
                       alt='Degree Distribution w/ Gender'
                       src='https://public.tableau.com/static/images/cs/cs411degreedistributionvisual/Sheet3/1_rss.png'
-                      style={{ border: 'none' }}
                     />
                   </a>
                 </noscript>
@@ -93,7 +92,6 @@ function Dashboard() {
                     <img
                       alt='Sheet2'
                       src='https://public.tableau.com/views/cs411placedvs_notvisual/Sheet2?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link'
-                      style={{ border: 'none' }}
                     />
                   </a>
                 </noscript>
@@ -125,7 +123,6 @@ function Dashboard() {
                     <img
                       alt='Salary Distribution'
                       src='https://public.tableau.com/static/images/cs/cs411salarydistributionvisual/Sheet1/1_rss.png'
-                      style={{ border: 'none' }}
                     />
                   </a>
                 </noscript>

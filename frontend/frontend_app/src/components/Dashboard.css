@@ -19,61 +19,36 @@
   .wrapper {
     color:  #fff;
   }
-  .sidebar {
-    position: fixed;
-    top:0;
-    left:0;
-    height: 100%;
-    width: 20%;
-    padding: 5em 2em 0 2em;
-    background: linear-gradient(#374e58, #233239, #1c292e);
-    max-width: 18em;
-  }
-  .sidebar .container {
-    position: relative;
-    top: 5%;
-    height: 100%;
-  }
-  .sidebar .container .title{
-    font-weight: 400;
-  }
-  .sidebar ul{
-    margin: 1em 0 3em 0;
-  }
-  .sidebar li{
-    display: block;
-    padding: 1em 0;
-    border-bottom: 1px #21284c solid;
-  }
-  .sidebar ul a {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
- 
  .dashboard {
-   background: #374e58;
-   padding: 2em;
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-   justify-content: center;
-   grid-gap: 2em;
-   position: absolute;
-   top: 5em;
-   right:0;
-   left: 18em;
-   width: calc(100%-18em);
-   overflow-x:hidden;
+  background: #374e58;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  grid-gap: 2em;
+  position: relative; /* Change to relative or remove if not needed */
+  top: 6em;
+  right: 0;
+  left: 0;
+  width: 100%;
+  overflow-x: hidden;
  }
   .tableauPlaceholder {
     height: 500px;
-    width: 650px;
-    padding: 2em;
+    width: 100%;
+    padding: 1em;
     box-shadow: 0 15px 150px #1d282d;
+    position: 'relative';
   }
-  .Distribution_Table {
-    height: 500px;
-    width: 650px;
+  .tableauViz {
+    width: 100%;
+  }
+
+  .table , th, td {
     padding: 2em;
+    position: 'relative';
     box-shadow: 0 15px 150px #1d282d;
+    align-items: left;
+    width: 100%;
+    border: 1px solid;
   }

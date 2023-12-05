@@ -55,7 +55,6 @@ function Dashboard() {
               <div
                 className='tableauPlaceholder'
                 id='viz1701127565034'
-                style={{ position: 'relative', width: '100%' }}
               >
                 <noscript>
                   <a href='#'>
@@ -66,7 +65,7 @@ function Dashboard() {
                     />
                   </a>
                 </noscript>
-                <object className='tableauViz' style={{ display: 'none' }}>
+                <object className='tableauViz' >
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
                     <param name='embed_code_version' value='3' /> 
                     <param name='site_root' value='' />
@@ -88,7 +87,6 @@ function Dashboard() {
               <div
                 className='tableauPlaceholder'
                 id='viz1701127565035'
-                style={{ position: 'relative', width: '100%' }}
               >
                <noscript>
                   <a href='#'>
@@ -99,7 +97,7 @@ function Dashboard() {
                     />
                   </a>
                 </noscript>
-                <object className='tableauViz' style={{ display: 'none' }}>
+                <object className='tableauViz'>
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
                     <param name='embed_code_version' value='3' /> 
                     <param name='site_root' value='' />
@@ -116,12 +114,11 @@ function Dashboard() {
                     <param name='filter' value='publish=yes' />
                 </object>
               </div>
-
+              <br/>
               {/* Third Data Visualization */}
               <div
                 className='tableauPlaceholder'
                 id='viz1701126787969'
-                style={{ position: 'relative', width: '100%' }}
               >
                 <noscript>
                   <a href='#'>
@@ -132,7 +129,7 @@ function Dashboard() {
                     />
                   </a>
                 </noscript>
-                <object className='tableauViz' style={{ display: 'none' }}>
+                <object className='tableauViz'>
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
                     <param name='embed_code_version' value='3' /> 
                     <param name='site_root' value='' />
@@ -148,10 +145,48 @@ function Dashboard() {
                     <param name='language' value='en-US' />
                     <param name='filter' value='publish=yes' />
                 </object>
-                <div className = "Distribution_Table" style={{ display: 'none' }}>
-                  <img src="" alt = "table"/>
-                </div>
               </div>
+              
+              <div className = "table" >
+                  <table>
+                    <tr>
+                    <th>Undergrad Degree</th>
+                    <th>Minimum Salary</th>
+                    <th>Maximum Salary</th>
+                    <th>Placed Count</th>
+                    <th>Not Placed Count</th>
+                    <th>Work Exp True Count</th>
+                    <th>Work Exp False Count</th>
+                    </tr>
+                    <tr>
+                      <td>Sci&Tech</td>
+                      <td>0</td>
+                      <td>988820.00</td>
+                      <td>168</td>
+                      <td>163</td>
+                      <td>158</td>
+                      <td>173</td>
+                    </tr>
+                    <tr>
+                      <td>Comm&Mgmt</td>
+                      <td>0</td>
+                      <td>96087.00</td>
+                      <td>229</td>
+                      <td>177</td>
+                      <td>163</td>
+                      <td>243</td>
+                    </tr>
+                    <tr>
+                      <td>Others</td>
+                      <td>0</td>
+                      <td>990578</td>
+                      <td>142</td>
+                      <td>120</td>
+                      <td>143</td>
+                      <td>119</td>
+                    </tr>
+                  </table>
+                </div>
             </main>
           </div>
         </div>

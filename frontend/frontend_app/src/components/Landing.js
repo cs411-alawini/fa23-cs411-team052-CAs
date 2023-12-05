@@ -42,17 +42,17 @@ function Landing() {
       <div className="banner">
         <div className="text">
           <div className="text-inner">
-            <h1>College</h1><br/>
+            <h1>College</h1>
             <h1>To Career</h1>
-            <p>by: Trisha, Ana, Areeba, Chai</p>
+            <h4>by: Trisha, Ana, Areeba, Chai</h4>
             <a href="/info">More Info</a>
           </div>
         </div>
         <div className="img">
           <div className="img-inner">
-            <img src="" alt="place image here" />
+            <img src="https://ttn-media.s3.amazonaws.com/wp-content/uploads/2021/12/05232643/PandemicGraduation_EthanCarroll-678x381.png" alt="Image cannot be displayed" width="400px" height="auto"/>
 
-            <div className="info-button">
+            {/* <div className="info-button">
               <button>
                 <i className="fa fa-plus"></i>
               </button>
@@ -78,7 +78,8 @@ function Landing() {
               <div className="info-text">
                 <p>In addition to placement user data users can see a dashboard that displays current trends regarding salary distribution and gender distribution.</p>
               </div>
-            </div>
+            </div> */}
+            
           </div>
         </div>
       </div>

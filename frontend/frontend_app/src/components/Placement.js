@@ -29,6 +29,7 @@ function Placement() {
     });
   };
 
+  const [deleteResult, setDeleteResult] = useState(null);
   const handleDelete = async () => {
     // Prompt the user to enter their student_id
     const studentIdToDelete = prompt('Enter your student_id to confirm deletion:');
@@ -48,6 +49,7 @@ function Placement() {
       });
   
       console.log(response.data);
+      setDeleteResult(response.data);
   
       // After successful deletion, reset the form data or perform any other necessary actions
       setFormData({
@@ -126,12 +128,17 @@ function Placement() {
           <button type="submit" onClick={handleSubmit}>Submit</button><br/><br/>
           <button type="button" onClick={handleDelete}>Delete</button>
         </form>
-        {/*Display Placement Data*/}
-        <div className="Results" style={{ marginTop: '100px', marginLeft: '10px'}}>
-          <h2 >Placement Results:</h2>
+        {/*Display Placement or Delete Data*/}
+        <div className="Results" style={{ marginTop: '100px', marginLeft: '10px' }}>
+          <h2>Placement Results:</h2>
           {placementResult && (
             <pre>{JSON.stringify(placementResult, null, 2)}</pre>
-        )}
+          )}
+
+          <h2>Delete Results:</h2>
+          {deleteResult && (
+            <pre>{JSON.stringify(deleteResult, null, 2)}</pre>
+          )}
         </div>
       </div>
     </div>
